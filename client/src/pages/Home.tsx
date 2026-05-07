@@ -18,9 +18,9 @@ import { useEffect, useRef, useState } from "react";
 
 const WHATSAPP_GROUP = "https://chat.whatsapp.com/FJT7j37Nn1IBPibjqzTURN?mode=gi_t";
 const WHATSAPP_DIRECT = "https://wa.me/55999678181";
-const HERO_IMAGE = "https://raw.githubusercontent.com/dsgngabs-arch/landing-whatsapp-2/main/client/public/_manus_/paraiso-hero_a8660976.png";
+const HERO_IMAGE = "/src/assets/paraiso-hero_a8660976.png";
 
-const LOGO_IMAGE = "https://raw.githubusercontent.com/dsgngabs-arch/landing-whatsapp-2/main/client/public/_manus_/paraiso-logo_270c88fa.jpg";
+const LOGO_IMAGE = "/src/assets/paraiso-logo_270c88fa.jpg";
 
 // WhatsApp SVG Icon
 function WhatsAppIcon({ size = 24, className = "" }: { size?: number; className?: string }) {
