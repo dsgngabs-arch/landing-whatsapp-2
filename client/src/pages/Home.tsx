@@ -15,12 +15,11 @@
  */
 
 import { useEffect, useRef, useState } from "react";
-
+import HERO_IMAGE from "../assets/paraiso-hero_a8660976.png";
+import LOGO_IMAGE from "../assets/paraiso-logo_270c88fa.jpg";
 const WHATSAPP_GROUP = "https://chat.whatsapp.com/FJT7j37Nn1IBPibjqzTURN?mode=gi_t";
 const WHATSAPP_DIRECT = "https://wa.me/55999678181";
-const HERO_IMAGE = "/src/assets/paraiso-hero_a8660976.png";
 
-const LOGO_IMAGE = "/src/assets/paraiso-logo_270c88fa.jpg";
 
 // WhatsApp SVG Icon
 function WhatsAppIcon({ size = 24, className = "" }: { size?: number; className?: string }) {
