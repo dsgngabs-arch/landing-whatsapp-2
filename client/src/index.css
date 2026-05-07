@@ -1,0 +1,442 @@
+/*
+ * PARAÍSO LOTERIAS — Design System
+ * Philosophy: "Luxo Tropical da Sorte" — Art Deco Digital Premium
+ * 
+ * Core Colors:
+ *   Verde escuro:    #2F6B3E  (bg principal)
+ *   Verde destaque:  #49A84E  (hover, accents)
+ *   Dourado:         #E4C44B  (CTAs, destaques premium)
+ *   Fundo secundário:#234F31  (seções alternadas)
+ *   Branco:          #FFFFFF  (textos principais)
+ * 
+ * Typography: Montserrat (headlines) + Inter (corpo)
+ * Motion: Suave, 0.3-0.6s ease-out
+ */
+
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  
+  /* Paraíso Loterias custom colors */
+  --color-paraiso-green-dark: oklch(0.38 0.12 145);
+  --color-paraiso-green-mid: oklch(0.45 0.14 145);
+  --color-paraiso-green-light: oklch(0.58 0.16 145);
+  --color-paraiso-gold: oklch(0.82 0.15 85);
+  --color-paraiso-gold-light: oklch(0.88 0.12 85);
+  --color-paraiso-bg-alt: oklch(0.32 0.10 145);
+}
+
+:root {
+  --radius: 0.75rem;
+  
+  /* Paraíso Loterias Theme */
+  --background: oklch(0.38 0.12 145);
+  --foreground: oklch(0.98 0 0);
+  --card: oklch(0.32 0.10 145);
+  --card-foreground: oklch(0.98 0 0);
+  --popover: oklch(0.32 0.10 145);
+  --popover-foreground: oklch(0.98 0 0);
+  --primary: oklch(0.82 0.15 85);
+  --primary-foreground: oklch(0.20 0.08 145);
+  --secondary: oklch(0.45 0.14 145);
+  --secondary-foreground: oklch(0.98 0 0);
+  --muted: oklch(0.32 0.10 145);
+  --muted-foreground: oklch(0.80 0.05 145);
+  --accent: oklch(0.58 0.16 145);
+  --accent-foreground: oklch(0.98 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(0.82 0.15 85 / 25%);
+  --input: oklch(0.45 0.14 145);
+  --ring: oklch(0.82 0.15 85);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+    background-color: #2F6B3E;
+    color: #FFFFFF;
+    overflow-x: hidden;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+  }
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [type="button"]:not(:disabled),
+  [type="submit"]:not(:disabled),
+  a[href],
+  select:not(:disabled) {
+    @apply cursor-pointer;
+  }
+}
+
+@layer components {
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .flex {
+    min-height: 0;
+    min-width: 0;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+      max-width: 1280px;
+    }
+  }
+
+  /* Paraíso Loterias Custom Components */
+  
+  .btn-gold {
+    background: linear-gradient(135deg, #E4C44B 0%, #F0D060 50%, #C9A830 100%);
+    color: #1a3d22;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 1rem;
+    padding: 1rem 2rem;
+    border-radius: 9999px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(228, 196, 75, 0.4), 0 4px 15px rgba(0,0,0,0.3);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    letter-spacing: 0.01em;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-gold::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.5s ease;
+  }
+
+  .btn-gold:hover::before {
+    left: 100%;
+  }
+
+  .btn-gold:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 0 35px rgba(228, 196, 75, 0.7), 0 8px 25px rgba(0,0,0,0.4);
+  }
+
+  .btn-gold:active {
+    transform: translateY(0) scale(0.98);
+  }
+
+  .btn-whatsapp {
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+    color: #FFFFFF;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 1rem 2rem;
+    border-radius: 9999px;
+    border: 2px solid rgba(255,255,255,0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(37, 211, 102, 0.35), 0 4px 15px rgba(0,0,0,0.3);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    letter-spacing: 0.01em;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-whatsapp::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s ease;
+  }
+
+  .btn-whatsapp:hover::before {
+    left: 100%;
+  }
+
+  .btn-whatsapp:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 0 35px rgba(37, 211, 102, 0.55), 0 8px 25px rgba(0,0,0,0.4);
+  }
+
+  .btn-whatsapp:active {
+    transform: translateY(0) scale(0.98);
+  }
+
+  .gold-border-card {
+    background: linear-gradient(145deg, rgba(73, 168, 78, 0.15), rgba(35, 79, 49, 0.4));
+    border: 1px solid rgba(228, 196, 75, 0.35);
+    border-radius: 1rem;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .gold-border-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 1rem;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(228, 196, 75, 0.6), transparent 50%, rgba(228, 196, 75, 0.3));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  .gold-border-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(228, 196, 75, 0.6);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3), 0 0 20px rgba(228, 196, 75, 0.15);
+  }
+
+  .section-alt {
+    background-color: #234F31;
+  }
+
+  .glow-text-gold {
+    text-shadow: 0 0 20px rgba(228, 196, 75, 0.5), 0 0 40px rgba(228, 196, 75, 0.2);
+  }
+
+  .glow-text-white {
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.15);
+  }
+
+  .trust-badge {
+    background: linear-gradient(135deg, rgba(228, 196, 75, 0.15), rgba(228, 196, 75, 0.05));
+    border: 1px solid rgba(228, 196, 75, 0.4);
+    border-radius: 9999px;
+    padding: 0.4rem 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.875rem;
+    color: rgba(255,255,255,0.9);
+    font-family: 'Inter', sans-serif;
+  }
+
+  .section-divider {
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #E4C44B, #F0D060);
+    border-radius: 9999px;
+    margin: 0 auto 1.5rem;
+    box-shadow: 0 0 10px rgba(228, 196, 75, 0.5);
+  }
+
+  .premium-seal {
+    background: linear-gradient(135deg, #E4C44B 0%, #F0D060 40%, #C9A830 100%);
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 40px rgba(228, 196, 75, 0.6), 0 0 80px rgba(228, 196, 75, 0.2), inset 0 2px 4px rgba(255,255,255,0.3);
+    position: relative;
+  }
+
+  .premium-seal::after {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    border: 2px dashed rgba(228, 196, 75, 0.5);
+    animation: spin-slow 20s linear infinite;
+  }
+
+  @keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+  }
+
+  @keyframes pulse-gold {
+    0%, 100% { box-shadow: 0 0 20px rgba(228, 196, 75, 0.4), 0 4px 15px rgba(0,0,0,0.3); }
+    50% { box-shadow: 0 0 40px rgba(228, 196, 75, 0.7), 0 4px 20px rgba(0,0,0,0.3); }
+  }
+
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes shimmer {
+    0% { background-position: -200% center; }
+    100% { background-position: 200% center; }
+  }
+
+  .animate-float {
+    animation: float 4s ease-in-out infinite;
+  }
+
+  .animate-pulse-gold {
+    animation: pulse-gold 2.5s ease-in-out infinite;
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.7s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.5s ease-out forwards;
+  }
+
+  .delay-100 { animation-delay: 0.1s; }
+  .delay-200 { animation-delay: 0.2s; }
+  .delay-300 { animation-delay: 0.3s; }
+  .delay-400 { animation-delay: 0.4s; }
+  .delay-500 { animation-delay: 0.5s; }
+  .delay-600 { animation-delay: 0.6s; }
+
+  .hero-bg {
+    background: 
+      radial-gradient(ellipse at top left, rgba(73, 168, 78, 0.3) 0%, transparent 50%),
+      radial-gradient(ellipse at bottom right, rgba(228, 196, 75, 0.1) 0%, transparent 50%),
+      linear-gradient(160deg, #2F6B3E 0%, #234F31 60%, #1a3d22 100%);
+  }
+
+  .particle {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: particle-float linear infinite;
+    opacity: 0;
+  }
+
+  @keyframes particle-float {
+    0% {
+      opacity: 0;
+      transform: translateY(0) rotate(0deg);
+    }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% {
+      opacity: 0;
+      transform: translateY(-100vh) rotate(720deg);
+    }
+  }
+
+  .whatsapp-float {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    z-index: 1000;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5), 0 0 0 0 rgba(37, 211, 102, 0.4);
+    animation: whatsapp-pulse 2s ease-in-out infinite;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+  }
+
+  .whatsapp-float:hover {
+    transform: scale(1.1);
+  }
+
+  @keyframes whatsapp-pulse {
+    0% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5), 0 0 0 0 rgba(37, 211, 102, 0.4); }
+    70% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5), 0 0 0 15px rgba(37, 211, 102, 0); }
+    100% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5), 0 0 0 0 rgba(37, 211, 102, 0); }
+  }
+
+  .noise-overlay {
+    position: relative;
+  }
+
+  .noise-overlay::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    opacity: 0.03;
+  }
+}
