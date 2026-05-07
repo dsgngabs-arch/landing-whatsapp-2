@@ -18,8 +18,8 @@ import { useEffect, useRef, useState } from "react";
 
 const WHATSAPP_GROUP = "https://chat.whatsapp.com/FJT7j37Nn1IBPibjqzTURN?mode=gi_t";
 const WHATSAPP_DIRECT = "https://wa.me/55999678181";
-const HERO_IMAGE = "/_manus_/paraiso-hero_a8660976.png";
-const LOGO_IMAGE = "/_manus_/paraiso-logo_270c88fa.jpg";
+const HERO_IMAGE = "/paraiso-hero_a8660976.png";
+const LOGO_IMAGE = "/paraiso-logo_270c88fa.jpg";
 
 // WhatsApp SVG Icon
 function WhatsAppIcon({ size = 24, className = "" }: { size?: number; className?: string }) {
