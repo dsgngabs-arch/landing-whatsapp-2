@@ -18,7 +18,7 @@ import { useEffect, useRef, useState } from "react";
 import HERO_IMAGE from "../assets/paraiso-hero_a8660976.png";
 import LOGO_IMAGE from "../assets/paraiso-logo_270c88fa.jpg";
 const WHATSAPP_GROUP = "https://chat.whatsapp.com/FJT7j37Nn1IBPibjqzTURN?mode=gi_t";
-const WHATSAPP_DIRECT = "https://wa.me/55999678181";
+const WHATSAPP_DIRECT = "https://wa.me/55997329026";
 
 
 // WhatsApp SVG Icon
