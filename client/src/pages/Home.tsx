@@ -300,15 +300,7 @@ export default function Home() {
                   animationFillMode: 'forwards',
                 }}
               >
-                <a
-                  href={WHATSAPP_GROUP}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-gold animate-pulse-gold"
-                  style={{ fontSize: '1.1rem', padding: '1.1rem 2rem', width: '100%', maxWidth: '460px' }}
-                >
-                  🍀 Entrar no nosso Grupo VIP
-                </a>
+              
 
                 <a
                   href={WHATSAPP_DIRECT}
