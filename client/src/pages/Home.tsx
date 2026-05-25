@@ -308,28 +308,30 @@ export default function Home() {
                   rel="noopener noreferrer"
                   className="btn-whatsapp"
                   style={{ fontSize: '1.1rem', padding: '1.1rem 2rem', width: '100%', maxWidth: '460px' }}
-               <a
-  href={WHATSAPP_GROUP}
-  target="_blank"
-  rel="noopener noreferrer"
-  className="btn-gold animate-pulse-gold"
-  style={{ fontSize: '1.1rem', padding: '1.1rem 2rem', width: '100%', maxWidth: '460px' }}
->
-  🍀 Entrar no nosso Grupo VIP
-</a>
+               <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginTop: '2rem' }}>
 
-<a
-  href={WHATSAPP_DIRECT}
-  target="_blank"
-  rel="noopener noreferrer"
-  className="btn-green"
->
-  <WhatsAppIcon size={22} />
-  📲 Falar com nosso WhatsApp
-</a>
+  <a
+    href={WHATSAPP_GROUP}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="btn-gold animate-pulse-gold"
+    style={{ fontSize: '1.1rem', padding: '1.1rem 2rem', width: '100%', maxWidth: '460px' }}
+  >
+    🍀 Entrar no nosso Grupo VIP
+  </a>
 
-              {/* Trust indicators */}
-              <div
+  <a
+    href={WHATSAPP_DIRECT}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="btn-green"
+    style={{ fontSize: '1.1rem', padding: '1.1rem 2rem', width: '100%', maxWidth: '460px' }}
+  >
+    <WhatsAppIcon size={22} />
+    📲 Falar com nosso WhatsApp
+  </a>
+
+</div>
                 className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start animate-fade-in-up"
                 style={{
                   animationDelay: '0.55s',
