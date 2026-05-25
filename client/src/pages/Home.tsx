@@ -310,6 +310,8 @@ export default function Home() {
                   style={{ fontSize: '1.1rem', padding: '1.1rem 2rem', width: '100%', maxWidth: '460px' }}
                <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginTop: '2rem' }}>
 
+<div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginTop: '2rem' }}>
+
   <a
     href={WHATSAPP_GROUP}
     target="_blank"
@@ -332,18 +334,6 @@ export default function Home() {
   </a>
 
 </div>
-                className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start animate-fade-in-up"
-                style={{
-                  animationDelay: '0.55s',
-                  opacity: 0,
-                  animationFillMode: 'forwards',
-                }}
-              >
-                <CheckItem text="Entrada gratuita" />
-                <CheckItem text="Grupo oficial da Paraíso Loterias" />
-                <CheckItem text="Atendimento direto pelo WhatsApp" />
-              </div>
-            </div>
 
             {/* Right: Hero Image */}
             <div
