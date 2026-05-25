@@ -309,6 +309,15 @@ export default function Home() {
                   className="btn-whatsapp"
                   style={{ fontSize: '1.1rem', padding: '1.1rem 2rem', width: '100%', maxWidth: '460px' }}
                 >
+                  <a
+  href={WHATSAPP_GROUP}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="btn-gold animate-pulse-gold"
+  style={{ fontSize: '1.1rem', padding: '1.1rem 2rem', width: '100%', maxWidth: '460px' }}
+>
+  🍀 Entrar no nosso Grupo VIP
+</a>
                   <WhatsAppIcon size={22} />
                   📲 Falar com nosso WhatsApp
                 </a>
