@@ -308,8 +308,7 @@ export default function Home() {
                   rel="noopener noreferrer"
                   className="btn-whatsapp"
                   style={{ fontSize: '1.1rem', padding: '1.1rem 2rem', width: '100%', maxWidth: '460px' }}
-                >
-                  <a
+               <a
   href={WHATSAPP_GROUP}
   target="_blank"
   rel="noopener noreferrer"
@@ -318,10 +317,16 @@ export default function Home() {
 >
   🍀 Entrar no nosso Grupo VIP
 </a>
-                  <WhatsAppIcon size={22} />
-                  📲 Falar com nosso WhatsApp
-                </a>
-              </div>
+
+<a
+  href={WHATSAPP_DIRECT}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="btn-green"
+>
+  <WhatsAppIcon size={22} />
+  📲 Falar com nosso WhatsApp
+</a>
 
               {/* Trust indicators */}
               <div
