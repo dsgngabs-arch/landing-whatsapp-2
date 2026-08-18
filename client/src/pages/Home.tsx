@@ -323,6 +323,8 @@ export default function Home() {
 
 </div>
 
+            </div>
+
             {/* Right: Hero Image */}
             <div
               className="flex-shrink-0 w-full lg:w-auto animate-fade-in"
