@@ -300,18 +300,6 @@ export default function Home() {
                   animationFillMode: 'forwards',
                 }}
               >
-              
-
-                <a
-                  href={WHATSAPP_DIRECT}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-whatsapp"
-                  style={{ fontSize: '1.1rem', padding: '1.1rem 2rem', width: '100%', maxWidth: '460px' }}
-               <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginTop: '2rem' }}>
-
-<div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginTop: '2rem' }}>
-
   <a
     href={WHATSAPP_GROUP}
     target="_blank"
